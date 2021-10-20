@@ -17,14 +17,19 @@ npm install
 npm run serve
 ```
 
-### 3.1 Compile project, build distributive
+### 3.1 Build distributive and preview
 
 Сompiled project in dist folder and start http-server for preview project.
 ```
 npm run preview
 ```
 
-### 3.2 Compile project and build distributive (at folder dist)
+Available at the links:
+1. Sign Up page (unavailable if there is a login in localstorage): http://localhost:8080/layout/sign-up.html
+
+2. Main page (needs login in localstorage or redirect to Sign-Up): http://localhost:8080/layout/main.html
+
+### 3.2 Compile project and build distributive
 
 Сompiled project in dist folder.
 
