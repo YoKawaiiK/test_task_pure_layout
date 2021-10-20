@@ -64,17 +64,35 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
+
+      // CSS, PostCSS, Sass
+
       {
-        test: /\.(scss|css)$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
-      },
+        test: /\.(s*)css$/,
+        use: [
+          MiniCssExtractPlugin.loader, "css-loader", "sass-loader", 
+          {
+          loader: "postcss-loader",
+          options: {
+            postcssOptions: {
+              plugins: [
+                [
+                  "postcss-preset-env",
+                  {
+                    // Options
+                  },
+                ],
+              ],
+            },
+          },
+        },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
-          filename: "fonts/[name][ext][query]",
-        },
-      },
+          filename: 'fonts/[name][ext][query]'
+        }
+       },
       //  svg
       {
         test: /\.svg$/,
